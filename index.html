@@ -1,0 +1,257 @@
+<!-- TEMPLATE 4: KINETIC - Typography Motion Studio -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KINETIC - Motion Typography</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Archivo:wght@300;600&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Archivo', sans-serif;
+            background: #fff;
+            color: #000;
+            overflow-x: hidden;
+        }
+        .display { font-family: 'Syncopate', sans-serif; }
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 100;
+            mix-blend-mode: difference;
+            color: #fff;
+        }
+        .logo-text {
+            font-size: 14px;
+            letter-spacing: 4px;
+            font-weight: 700;
+        }
+        .menu-trigger {
+            width: 40px;
+            height: 12px;
+            position: relative;
+            cursor: pointer;
+        }
+        .menu-trigger span {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            transition: all 0.3s;
+        }
+        .menu-trigger span:nth-child(2) { top: 10px; width: 60%; right: 0; }
+        .hero-kinetic {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        .kinetic-row {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            font-size: clamp(60px, 12vw, 180px);
+            font-weight: 700;
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+        }
+        .kinetic-row:nth-child(1) { animation: slideLeft 30s linear infinite; }
+        .kinetic-row:nth-child(2) { animation: slideRight 25s linear infinite; color: transparent; -webkit-text-stroke: 2px #000; }
+        .kinetic-row:nth-child(3) { animation: slideLeft 35s linear infinite; }
+        @keyframes slideLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes slideRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .kinetic-content {
+            display: flex;
+            gap: 100px;
+        }
+        .kinetic-content span { display: inline-block; }
+        .services-strip {
+            background: #000;
+            color: #fff;
+            padding: 40px 0;
+            overflow: hidden;
+            transform: rotate(-2deg) scale(1.1);
+            margin: 100px 0;
+        }
+        .services-content {
+            display: flex;
+            gap: 60px;
+            animation: marquee 20s linear infinite;
+            white-space: nowrap;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: #000;
+            margin: 0 2px;
+        }
+        .work-item {
+            background: #fff;
+            aspect-ratio: 1;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .work-item-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #f0f0f0;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .work-item:hover .work-item-bg { transform: scale(1.1); }
+        .work-item-text {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            z-index: 2;
+        }
+        .work-item-text h3 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .work-item-text p {
+            font-size: 12px;
+            color: #666;
+        }
+        .contact-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .contact-section h2 {
+            font-size: clamp(40px, 8vw, 100px);
+            margin-bottom: 40px;
+            line-height: 1.1;
+        }
+        .email-link {
+            font-size: clamp(20px, 4vw, 40px);
+            color: #000;
+            text-decoration: none;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        .email-link:hover {
+            letter-spacing: 2px;
+            border-bottom-width: 4px;
+        }
+        @media (max-width: 768px) {
+            .work-grid { grid-template-columns: 1fr; }
+            .kinetic-row { font-size: 40px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="logo-text display">KINETIC</div>
+        <div class="menu-trigger">
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <section class="hero-kinetic">
+        <div class="kinetic-row display">
+            <div class="kinetic-content">
+                <span>MOTION</span><span>DESIGN</span><span>MOTION</span><span>DESIGN</span><span>MOTION</span><span>DESIGN</span><span>MOTION</span><span>DESIGN</span>
+            </div>
+        </div>
+        <div class="kinetic-row display">
+            <div class="kinetic-content">
+                <span>STUDIO</span><span>CREATIVE</span><span>STUDIO</span><span>CREATIVE</span><span>STUDIO</span><span>CREATIVE</span><span>STUDIO</span><span>CREATIVE</span>
+            </div>
+        </div>
+        <div class="kinetic-row display">
+            <div class="kinetic-content">
+                <span>TYPOGRAPHY</span><span>BRAND</span><span>TYPOGRAPHY</span><span>BRAND</span><span>TYPOGRAPHY</span><span>BRAND</span><span>TYPOGRAPHY</span><span>BRAND</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="services-strip">
+        <div class="services-content display">
+            <span>BRAND IDENTITY</span><span>•</span><span>MOTION DESIGN</span><span>•</span><span>TYPOGRAPHY</span><span>•</span><span>ART DIRECTION</span><span>•</span><span>BRAND IDENTITY</span><span>•</span><span>MOTION DESIGN</span><span>•</span><span>TYPOGRAPHY</span><span>•</span><span>ART DIRECTION</span><span>•</span>
+        </div>
+    </div>
+
+    <section class="work-grid">
+        <div class="work-item">
+            <div class="work-item-bg"></div>
+            <div class="work-item-text">
+                <h3>PROJECT ALPHA</h3>
+                <p>Brand Identity</p>
+            </div>
+        </div>
+        <div class="work-item">
+            <div class="work-item-bg"></div>
+            <div class="work-item-text">
+                <h3>PROJECT BETA</h3>
+                <p>Motion Design</p>
+            </div>
+        </div>
+        <div class="work-item">
+            <div class="work-item-bg"></div>
+            <div class="work-item-text">
+                <h3>PROJECT GAMMA</h3>
+                <p>Typography</p>
+            </div>
+        </div>
+        <div class="work-item">
+            <div class="work-item-bg"></div>
+            <div class="work-item-text">
+                <h3>PROJECT DELTA</h3>
+                <p>Art Direction</p>
+            </div>
+        </div>
+        <div class="work-item">
+            <div class="work-item-bg"></div>
+            <div class="work-item-text">
+                <h3>PROJECT EPSILON</h3>
+                <p>Campaign</p>
+            </div>
+        </div>
+        <div class="work-item">
+            <div class="work-item-bg"></div>
+            <div class="work-item-text">
+                <h3>PROJECT ZETA</h3>
+                <p>Digital</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div>
+            <h2 class="display">LET'S CREATE<br>TOGETHER</h2>
+            <a href="mailto:hello@kinetic.studio" class="email-link">hello@kinetic.studio</a>
+        </div>
+    </section>
+</body>
+</html>
